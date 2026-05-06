@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Melissa Acosta · People & Culture Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #05323A;
+    --paper: #eef4f4;
+    --cream: #dceced;
+    --muted: #48908C;
+    --accent: #0B4B52;
+    --accent2: #2F7B77;
+    --rule: rgba(5,50,58,0.13);
+    --card-bg: #f7fbfb;
+  }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+background: var(–paper);
+color: var(–ink);
+font-family: ‘Instrument Sans’, sans-serif;
+font-size: 15px;
+line-height: 1.6;
+overflow-x: hidden;
+}
+
+/* Grid overlay */
+body::before {
+content: ‘’;
+position: fixed;
+inset: 0;
+background-image:
+linear-gradient(var(–rule) 1px, transparent 1px),
+linear-gradient(90deg, var(–rule) 1px, transparent 1px);
+background-size: 60px 60px;
+pointer-events: none;
+z-index: 0;
+opacity: 0.4;
+}
+
+/* ── HEADER ── */
+header {
+position: relative;
+z-index: 10;
+padding: 80px 60px 60px;
+border-bottom: 1px solid var(–rule);
+display: grid;
+grid-template-columns: 1fr auto;
+align-items: end;
+gap: 40px;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.name-block h1 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: clamp(52px, 8vw, 96px);
+font-weight: 300;
+line-height: 0.92;
+letter-spacing: -0.02em;
+color: var(–ink);
+}
+
+.name-block h1 em {
+font-style: italic;
+color: var(–accent);
+}
+
+.name-block .role {
+margin-top: 18px;
+font-family: ‘DM Mono’, monospace;
+font-size: 11px;
+font-weight: 300;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(–muted);
+display: flex;
+align-items: center;
+gap: 16px;
+}
+
+.name-block .role::before {
+content: ‘’;
+display: block;
+width: 32px;
+height: 1px;
+background: var(–accent2);
+}
+
+.contact-links {
+margin-top: 14px;
+display: flex;
+gap: 20px;
+flex-wrap: wrap;
+}
+
+.contact-links a {
+font-family: ‘DM Mono’, monospace;
+font-size: 11px;
+letter-spacing: 0.1em;
+color: var(–accent);
+text-decoration: none;
+border-bottom: 1px solid var(–accent2);
+padding-bottom: 2px;
+transition: color 0.2s, border-color 0.2s;
+}
+
+.contact-links a:hover {
+color: var(–accent2);
+border-color: var(–accent2);
+}
+
+.header-meta {
+text-align: right;
+}
+
+.header-meta .cphr {
+display: inline-block;
+border: 1px solid var(–accent);
+color: var(–accent);
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+padding: 6px 14px;
+margin-bottom: 12px;
+}
+
+.header-meta p {
+font-size: 12px;
+color: var(–muted);
+line-height: 1.8;
+}
+
+/* ── NAV ── */
+nav {
+position: sticky;
+top: 0;
+z-index: 100;
+background: rgba(238, 244, 244, 0.92);
+backdrop-filter: blur(12px);
+border-bottom: 1px solid var(–rule);
+padding: 0 60px;
+max-width: 100%;
+}
+
+nav ul {
+list-style: none;
+display: flex;
+gap: 0;
+max-width: 1200px;
+margin: 0 auto;
+overflow-x: auto;
+}
+
+nav ul li a {
+display: block;
+padding: 16px 22px;
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+color: var(–muted);
+text-decoration: none;
+white-space: nowrap;
+border-bottom: 2px solid transparent;
+transition: color 0.2s, border-color 0.2s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+color: var(–ink);
+border-bottom-color: var(–accent2);
+}
+
+/* ── MAIN LAYOUT ── */
+main {
+position: relative;
+z-index: 1;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 60px 100px;
+}
+
+/* ── SECTION ── */
+section {
+padding-top: 80px;
+}
+
+.section-label {
+display: flex;
+align-items: center;
+gap: 20px;
+margin-bottom: 48px;
+}
+
+.section-label .num {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+color: var(–accent2);
+letter-spacing: 0.12em;
+}
+
+.section-label h2 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: clamp(28px, 4vw, 42px);
+font-weight: 300;
+letter-spacing: -0.01em;
+color: var(–ink);
+}
+
+.section-label::after {
+content: ‘’;
+flex: 1;
+height: 1px;
+background: var(–rule);
+}
+
+/* ── INTRO BLOCK ── */
+.intro-block {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 60px;
+padding: 48px 0;
+border-bottom: 1px solid var(–rule);
+}
+
+.intro-block .lead {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: clamp(20px, 2.5vw, 26px);
+font-weight: 300;
+line-height: 1.5;
+color: var(–ink);
+}
+
+.intro-block .lead em { font-style: italic; color: var(–accent); }
+
+.intro-block .detail {
+font-size: 14px;
+color: var(–muted);
+line-height: 1.8;
+border-left: 1px solid var(–rule);
+padding-left: 32px;
+}
+
+.stats-row {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 1px;
+background: var(–rule);
+border: 1px solid var(–rule);
+margin-top: 48px;
+}
+
+.stat {
+background: var(–paper);
+padding: 28px 24px;
+text-align: center;
+}
+
+.stat .big {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 44px;
+font-weight: 300;
+color: var(–accent);
+line-height: 1;
+display: block;
+}
+
+.stat .label {
+font-family: ‘DM Mono’, monospace;
+font-size: 9px;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+color: var(–muted);
+margin-top: 8px;
+display: block;
+}
+
+/* ── PROJECT GRID ── */
+.project-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+gap: 2px;
+background: var(–rule);
+border: 1px solid var(–rule);
+}
+
+.project-card {
+background: var(–card-bg);
+padding: 32px;
+cursor: pointer;
+transition: background 0.18s;
+position: relative;
+overflow: hidden;
+}
+
+.project-card::after {
+content: ‘’;
+position: absolute;
+bottom: 0; left: 0;
+width: 0; height: 2px;
+background: var(–accent2);
+transition: width 0.3s ease;
+}
+
+.project-card:hover { background: #faf8f4; }
+.project-card:hover::after { width: 100%; }
+
+.project-card .tag {
+font-family: ‘DM Mono’, monospace;
+font-size: 9px;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+color: var(–accent2);
+margin-bottom: 14px;
+display: block;
+}
+
+.project-card h3 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 20px;
+font-weight: 400;
+line-height: 1.3;
+color: var(–ink);
+margin-bottom: 12px;
+}
+
+.project-card .why {
+font-size: 13px;
+color: var(–muted);
+line-height: 1.7;
+margin-bottom: 20px;
+}
+
+.project-card .outcome-label {
+font-family: ‘DM Mono’, monospace;
+font-size: 9px;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+color: var(–accent);
+margin-bottom: 8px;
+display: block;
+}
+
+.project-card .outcome {
+font-size: 13px;
+color: var(–ink);
+line-height: 1.7;
+border-left: 2px solid var(–accent);
+padding-left: 14px;
+}
+
+/* Featured card */
+.project-card.featured {
+grid-column: span 2;
+background: #05323A;
+color: #fff;
+}
+
+.project-card.featured .tag { color: rgba(255,255,255,0.5); }
+.project-card.featured h3 { color: #fff; font-size: 26px; }
+.project-card.featured .why { color: rgba(255,255,255,0.7); }
+.project-card.featured .outcome-label { color: rgba(255,255,255,0.5); }
+.project-card.featured .outcome { color: #fff; border-color: rgba(255,255,255,0.4); }
+.project-card.featured::after { background: #48908C; }
+.project-card.featured:hover { background: #0B4B52; }
+
+/* ── HIGHLIGHT ROW ── */
+.highlight-row {
+display: grid;
+grid-template-columns: 1fr 2px 1fr;
+gap: 0;
+border: 1px solid var(–rule);
+margin-top: 2px;
+}
+
+.highlight-col {
+padding: 40px;
+}
+
+.highlight-divider {
+background: var(–rule);
+}
+
+.highlight-col h3 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 22px;
+font-weight: 400;
+margin-bottom: 16px;
+color: var(–ink);
+}
+
+.highlight-col p {
+font-size: 13px;
+color: var(–muted);
+line-height: 1.8;
+}
+
+.highlight-col .metric {
+display: inline-block;
+background: #1E696C;
+color: white;
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.1em;
+padding: 4px 10px;
+margin-top: 16px;
+}
+
+/* ── TIMELINE ── */
+.timeline {
+position: relative;
+padding-left: 32px;
+border-left: 1px solid var(–rule);
+}
+
+.timeline-item {
+position: relative;
+padding-bottom: 40px;
+}
+
+.timeline-item::before {
+content: ‘’;
+position: absolute;
+left: -37px;
+top: 6px;
+width: 10px; height: 10px;
+border-radius: 50%;
+background: var(–paper);
+border: 2px solid var(–accent2);
+}
+
+.timeline-item .org {
+font-family: ‘DM Mono’, monospace;
+font-size: 9px;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+color: var(–accent2);
+margin-bottom: 6px;
+}
+
+.timeline-item h3 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 22px;
+font-weight: 400;
+margin-bottom: 8px;
+}
+
+.timeline-item .years {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+color: var(–muted);
+margin-bottom: 14px;
+}
+
+.timeline-item p {
+font-size: 13px;
+color: var(–muted);
+line-height: 1.8;
+max-width: 580px;
+}
+
+/* ── SKILLS GRID ── */
+.skills-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 2px;
+background: var(–rule);
+border: 1px solid var(–rule);
+}
+
+.skill-block {
+background: var(–card-bg);
+padding: 32px;
+}
+
+.skill-block .skill-icon {
+font-size: 22px;
+margin-bottom: 14px;
+display: block;
+}
+
+.skill-block h4 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 18px;
+font-weight: 400;
+margin-bottom: 12px;
+color: var(–ink);
+}
+
+.skill-block ul {
+list-style: none;
+}
+
+.skill-block ul li {
+font-size: 12px;
+color: var(–muted);
+padding: 4px 0;
+border-bottom: 1px solid var(–rule);
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+.skill-block ul li::before {
+content: ‘’;
+display: block;
+width: 4px; height: 4px;
+border-radius: 50%;
+background: var(–accent2);
+flex-shrink: 0;
+}
+
+/* ── TOOLS ── */
+.tools-list {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+margin-top: 32px;
+}
+
+.tool-tag {
+border: 1px solid var(–rule);
+padding: 7px 16px;
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.1em;
+color: var(–muted);
+background: var(–card-bg);
+transition: all 0.2s;
+}
+
+.tool-tag:hover {
+background: #185A60;
+color: white;
+border-color: #185A60;
+}
+
+/* ── FOOTER ── */
+footer {
+position: relative;
+z-index: 1;
+border-top: 1px solid var(–rule);
+max-width: 1200px;
+margin: 0 auto;
+padding: 40px 60px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+footer .f-name {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 24px;
+font-weight: 300;
+color: var(–ink);
+}
+
+footer .f-copy {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+color: var(–muted);
+letter-spacing: 0.1em;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(24px); }
+to  { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+opacity: 0;
+animation: fadeUp 0.7s ease forwards;
+}
+
+.fade-up:nth-child(1) { animation-delay: 0.1s; }
+.fade-up:nth-child(2) { animation-delay: 0.2s; }
+.fade-up:nth-child(3) { animation-delay: 0.3s; }
+.fade-up:nth-child(4) { animation-delay: 0.4s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+header, main, footer, nav { padding-left: 24px; padding-right: 24px; }
+header { grid-template-columns: 1fr; }
+.header-meta { text-align: left; }
+.intro-block { grid-template-columns: 1fr; gap: 32px; }
+.intro-block .detail { border-left: none; border-top: 1px solid var(–rule); padding-left: 0; padding-top: 24px; }
+.stats-row { grid-template-columns: repeat(2, 1fr); }
+.project-card.featured { grid-column: span 1; }
+.project-grid { grid-template-columns: 1fr; }
+.skills-grid { grid-template-columns: 1fr; }
+.highlight-row { grid-template-columns: 1fr; }
+.highlight-divider { display: none; }
+footer { flex-direction: column; gap: 16px; text-align: center; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <div class="name-block fade-up">
+    <h1>Melissa<br><em>Acosta</em></h1>
+    <p class="role">People &amp; Culture Portfolio</p>
+    <div class="contact-links">
+      <a href="mailto:melissa.acost@yahoo.com">melissa.acost@yahoo.com</a>
+      <a href="https://www.linkedin.com/in/melissa-acosta-cphr" target="_blank">LinkedIn · melissa-acosta-cphr</a>
+    </div>
+  </div>
+  <div class="header-meta fade-up">
+    <span class="cphr">CPHR Designated</span>
+    <p>Senior People &amp; Culture Business Partner<br>11+ years progressive experience<br>Canada &amp; Latin America</p>
+  </div>
+</header>
+
+<!-- NAV -->
+
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#analytics">Analytics &amp; Reporting</a></li>
+    <li><a href="#listening">Employee Listening</a></li>
+    <li><a href="#compensation">Compensation</a></li>
+    <li><a href="#talent">Talent &amp; Onboarding</a></li>
+    <li><a href="#operations">Operations &amp; Compliance</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills &amp; Tools</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+    <div class="section-label">
+      <span class="num">00</span>
+      <h2>About This Work</h2>
+    </div>
+
+```
+<div class="intro-block">
+  <div class="lead">
+    I build <em>integrated people systems</em> where data, employee experience, and organizational psychology work together rather than in silos.
+  </div>
+  <div class="detail">
+    This portfolio covers 15+ bodies of work across people analytics, employee listening, compensation, talent systems, and organizational design, built across nonprofit, technology, consulting, and multinational environments in Canada and Latin America.<br><br>
+    Most of this work was built with lean resources, no dedicated analytics team, and a strong belief that good HR doesn't require expensive tooling. It requires clear thinking and sound methodology.
+  </div>
+</div>
+
+<div class="stats-row">
+  <div class="stat">
+    <span class="big">11+</span>
+    <span class="label">Years Experience</span>
+  </div>
+  <div class="stat">
+    <span class="big">616</span>
+    <span class="label">Roles Standardized</span>
+  </div>
+  <div class="stat">
+    <span class="big">9</span>
+    <span class="label">Countries Supported</span>
+  </div>
+  <div class="stat">
+    <span class="big">8 to 10</span>
+    <span class="label">Survey Waves Analyzed</span>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- ANALYTICS -->
+
+  <section id="analytics">
+    <div class="section-label">
+      <span class="num">01</span>
+      <h2>Analytics &amp; Workforce Reporting</h2>
+    </div>
+
+```
+<div class="project-grid">
+
+  <div class="project-card featured">
+    <span class="tag">★ Featured · People Analytics</span>
+    <h3>Multi-Year Compensation Model</h3>
+    <p class="why">The organization lacked longitudinal compensation visibility. Salary decisions were reactive, disconnected from trends, and difficult to defend to the board without a structured evidence base.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Built a multi-year model capturing beginning-of-year and end-of-year salaries, salary movement, percentage increases, tenure, job level, department, province, and employee group, creating the first structured foundation for equity conversations and board-level compensation reporting.</p>
+  </div>
+
+  <div class="project-card">
+    <span class="tag">People Analytics</span>
+    <h3>Compensation Benchmarking &amp; Salary Trend Analysis</h3>
+    <p class="why">Leadership needed to understand how salaries compared internally and against the market, especially important for retention, fairness, and compensation governance in a competitive labour market.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Conducted benchmarking using internal salary history and external market data, helping leadership understand pay positioning, market movement, and areas requiring further review.</p>
+  </div>
+
+  <div class="project-card">
+    <span class="tag">People Analytics</span>
+    <h3>Compa-Ratio Analysis</h3>
+    <p class="why">Salary amounts alone don't show whether employees are positioned appropriately within a band. A more rigorous view of pay positioning was needed to support equity-focused decisions.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Applied compa-ratio analysis to assess pay positioning, identify internal equity considerations, and provide structured input to compensation planning conversations.</p>
+  </div>
+
+  <div class="project-card">
+    <span class="tag">Executive Reporting</span>
+    <h3>Board-Ready Compensation &amp; Workforce Reporting</h3>
+    <p class="why">Senior leaders and board members needed concise, credible people data that could support governance-level conversations about compensation strategy and workforce risk.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Prepared analysis and reports that translated complex people data into clear narratives for board audiences, strengthening the organization's ability to discuss workforce trends with confidence.</p>
+  </div>
+
+  <div class="project-card">
+    <span class="tag">Workforce Reporting</span>
+    <h3>Annual Headcount Tracking Report</h3>
+    <p class="why">Without consistent tracking, it was harder to support planning, budgeting, and people strategy in a distributed organization spread across HQ and project-based teams.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Created headcount tracking across department, province, employment group, and organizational segment, giving leadership a reliable view of workforce structure for planning conversations.</p>
+  </div>
+
+  <div class="project-card">
+    <span class="tag">Workforce Reporting</span>
+    <h3>Total Cost of Employment &amp; Payroll Summary</h3>
+    <p class="why">Leaders needed visibility into the full cost of employment beyond base salary — including statutory costs like CPP and EI — to support budgeting and funding decisions.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Created a statutory payroll cost summary comparing gross pay, employer costs, funded amounts, and cost variances, improving financial visibility for People, Finance, and leadership.</p>
+  </div>
+
+  <div class="project-card">
+    <span class="tag">Workforce Reporting</span>
+    <h3>Payroll Allocation &amp; Cost Distribution Model</h3>
+    <p class="why">Employees split across multiple projects required accurate, consistent allocation of payroll costs with reliable pay-cycle record preservation.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Helped design a Google Sheets-based model supporting live data, pay-cycle snapshots, project splits, and reconciliation logic, strengthening payroll distribution and reporting accuracy.</p>
+  </div>
+
+  <div class="project-card">
+    <span class="tag">HR Operations</span>
+    <h3>People &amp; Culture Metrics &amp; Cadence Framework</h3>
+    <p class="why">People data existed across many areas but there was no operating rhythm for what should be reviewed, when, and by whom. A cadence framework was needed to make P&amp;C work more strategic.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Developed a metrics and cadence plan across payroll, compensation, talent acquisition, onboarding, retention, performance, engagement, learning, DEIB, wellbeing, and annual policy cycles.</p>
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- EMPLOYEE LISTENING -->
+
+  <section id="listening">
+    <div class="section-label">
+      <span class="num">02</span>
+      <h2>Employee Listening &amp; Engagement</h2>
+    </div>
+
+```
+<div class="project-grid">
+
+  <div class="project-card featured">
+    <span class="tag">★ Featured · Employee Listening</span>
+    <h3>Multi-Wave Engagement Survey Strategy &amp; Dashboard</h3>
+    <p class="why">8 to 10 survey waves over four years with shifting question sets made longitudinal analysis nearly impossible. The organization needed a way to track employee sentiment over time without losing comparability.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Developed a construct-level aggregation approach to normalize engagement data across waves, mapping shifting questions to 6 to 8 stable meta-themes, making longitudinal trend analysis possible for the first time. Built accompanying dashboards showing favorability, eNPS, HQ vs. Projects comparisons, and dimension-level results.</p>
+  </div>
+
+  <div class="project-card">
+    <span class="tag">Employee Listening</span>
+    <h3>Employee Listening Strategy</h3>
+    <p class="why">The organization needed a more structured approach to understanding employee experience beyond anecdotal feedback or one-off conversations in a remote, distributed environment.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Built a mature listening approach using biannual surveys, pulse checks, qualitative channels, and eNPS tracking, helping leadership identify patterns and prioritize action based on evidence.</p>
+  </div>
+
+  <div class="project-card">
+    <span class="tag">Analytics</span>
+    <h3>Engagement Analytics Dashboard</h3>
+    <p class="why">Raw survey results alone didn't give enough context to understand trends, team differences, or priority areas. The data needed to be translated into usable leadership insights.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Created reporting showing favorability scores, eNPS movement, dimension-level results, and key gaps, helping leaders move from "what did employees say?" to "what do we do next?"</p>
+  </div>
+
+  <div class="project-card">
+    <span class="tag">Manager Enablement</span>
+    <h3>Manager Engagement Reporting Pack</h3>
+    <p class="why">Broad organizational summaries don't translate into better day-to-day leadership. Managers needed tailored, practical insights to understand where their teams needed support.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Developed manager-facing reporting with KPI tables, segment comparisons, gap analysis, and prioritized recommendations to support manager accountability and targeted action planning.</p>
+  </div>
+
+  <div class="project-card">
+    <span class="tag">IFX Networks</span>
+    <h3>Regional Engagement &amp; NPS Measurement</h3>
+    <p class="why">Understanding employee sentiment across multiple countries during growth and transformation was essential for morale, communication, and leadership trust.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Led regional measurement using NPS-style surveys, qualitative feedback, and leadership reporting, surfacing employee concerns and informing action plans across the region.</p>
+  </div>
+
+</div>
+
+<!-- PTO highlight -->
+<div class="highlight-row">
+  <div class="highlight-col">
+    <h3>PTO / Vacation Utilization Dashboard</h3>
+    <p>Built a dashboard using normalized HRIS data to show employee-level and organization-level vacation usage, tracking progress against a June OKR and supporting manager conversations about workload and wellbeing.</p>
+    <span class="metric">Tied to Organizational OKR</span>
+  </div>
+  <div class="highlight-divider"></div>
+  <div class="highlight-col">
+    <h3>Employee Vacation Risk Analysis</h3>
+    <p>Created an employee-level risk view with entitlement, vacation used, percentage used, burnout risk flag, zero-vacation flag, and risk priority, moving the dashboard from passive reporting to practical manager action.</p>
+    <span class="metric">Burnout Risk Flagging</span>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- COMPENSATION -->
+
+  <section id="compensation">
+    <div class="section-label">
+      <span class="num">03</span>
+      <h2>Compensation &amp; Job Architecture</h2>
+    </div>
+
+```
+<div class="project-grid">
+
+  <div class="project-card featured">
+    <span class="tag">★ Featured · Job Architecture</span>
+    <h3>IFX Role Modernization: 157 Roles × 9 Countries</h3>
+    <p class="why">IFX operated across 14 departments and 9 countries with significant inconsistency in role clarity, job expectations, and career pathways, creating complexity for performance, compensation, and planning.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Modernized 157 roles using PwC job architecture methodology, creating stronger foundations for performance management, recruitment, career pathways, internal equity, and organizational planning across a regional operation.</p>
+  </div>
+
+  <div class="project-card featured">
+    <span class="tag">★ Featured · Job Architecture</span>
+    <h3>Colsubsidio Role Standardization: 459 Roles × 35 Departments</h3>
+    <p class="why">With approximately 15,000 employees, role consistency was critical for workforce planning, compensation, and career progression, and significant ambiguity existed across the organization.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Standardized 459 roles across 35 departments using PwC methodology, one of the largest job architecture projects at the organization, contributing to clearer structures, salary band development, and internal equity foundations.</p>
+  </div>
+
+  <div class="project-card">
+    <span class="tag">Compensation</span>
+    <h3>Job Architecture &amp; Role Levelling Support</h3>
+    <p class="why">Clear roles, levels, and job structures are essential for fair compensation, career growth, and workforce planning. This is foundational work that underpins almost every other people process.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Contributed to job architecture, role documentation, levelling, salary band inputs, and organizational structure analysis across Code for Canada, IFX, and Colsubsidio.</p>
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- TALENT & ONBOARDING -->
+
+  <section id="talent">
+    <div class="section-label">
+      <span class="num">04</span>
+      <h2>Talent Systems &amp; Onboarding</h2>
+    </div>
+
+```
+<div class="project-grid">
+
+  <div class="project-card featured">
+    <span class="tag">★ Featured · Service Design</span>
+    <h3>Onboarding Redesign: Service Blueprint &amp; Journey Mapping</h3>
+    <p class="why">Onboarding depended too heavily on individual managers and fragmented resources. New hires in a remote organization needed a more consistent, structured experience, and the organization needed to understand what was happening from the employee's perspective.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Led a 6-month redesign using service design methods including journey mapping and a full service blueprint. Mapped frontstage employee touchpoints, backstage HR activities, systems, handoffs, and improvement opportunities, then co-created department-specific onboarding standards with managers across the organization.</p>
+  </div>
+
+  <div class="project-card">
+    <span class="tag">Onboarding</span>
+    <h3>Notion Onboarding Knowledge Hub</h3>
+    <p class="why">Information was scattered across systems and informal practices. New employees needed a centralized, self-service entry point that worked in a fully remote environment.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Built a Notion hub with structured guidance for Day 1, Week 1, Weeks 2 to 3, and Month 1, improving consistency, accessibility, and self-service access for new hires.</p>
+  </div>
+
+  <div class="project-card">
+    <span class="tag">IFX Networks</span>
+    <h3>IFX DNA Challenge: Regional Onboarding Program</h3>
+    <p class="why">A multi-country technology company needed a consistent onboarding experience that connected employees to culture, values, products, and ways of working across 9 countries.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Designed and launched standardized onboarding across 9 countries, strengthening cultural integration, organizational knowledge, and new hire connection at scale.</p>
+  </div>
+
+  <div class="project-card">
+    <span class="tag">Performance</span>
+    <h3>Growth Goal Tracking System</h3>
+    <p class="why">The organization had an OKR requiring individual growth goals but no clear way to track progress, manager approvals, or accountability across teams.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Built a Notion-based tracking system with statuses, manager approvals, and completion visibility, improving follow-through and supporting the organization's OKR accountability.</p>
+  </div>
+
+  <div class="project-card">
+    <span class="tag">Performance</span>
+    <h3>Performance Cycle Adoption &amp; Manager Accountability</h3>
+    <p class="why">Performance processes only create value when managers and employees consistently participate. The organization needed better visibility into adoption and follow-through.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Created tracking and reporting mechanisms to monitor participation, identify gaps, and support manager accountability through performance and growth cycles.</p>
+  </div>
+
+  <div class="project-card">
+    <span class="tag">IFX Networks</span>
+    <h3>Performance Management Platform Implementation</h3>
+    <p class="why">IFX had manual, Excel-based performance processes that were difficult to scale across 9 countries. A structured platform was needed for goals, competencies, calibration, and visibility.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Led implementation of a regional performance management platform, replacing manual tracking and improving structure, consistency, and leadership visibility across performance cycles.</p>
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- OPERATIONS -->
+
+  <section id="operations">
+    <div class="section-label">
+      <span class="num">05</span>
+      <h2>Operations &amp; Compliance</h2>
+    </div>
+
+```
+<div class="project-grid">
+
+  <div class="project-card">
+    <span class="tag">Health &amp; Safety</span>
+    <h3>Remote OH&amp;S Resource Hub</h3>
+    <p class="why">Remote organizations still have health and safety obligations but traditional models don't fit home-based work. Employees needed clear resources and the organization needed better compliance tracking.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Built a remote-first OH&amp;S hub with safety assessments, checklists, emergency planning resources, and compliance guidance, making the process more employee-friendly and organizationally manageable.</p>
+  </div>
+
+  <div class="project-card">
+    <span class="tag">Multi-Province</span>
+    <h3>Policy &amp; Leave Compliance Updates</h3>
+    <p class="why">Operating across multiple Canadian provinces made compliance more complex. Policies and leave documents needed to reflect provincial employment standards while remaining understandable for employees.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Reviewed and updated employee-facing policy and leave materials across provinces, maintaining compliance while improving clarity and usability for a distributed workforce.</p>
+  </div>
+
+  <div class="project-card">
+    <span class="tag">Manager Enablement</span>
+    <h3>Manager Enablement Resources</h3>
+    <p class="why">Managers needed practical tools to support development conversations, performance, onboarding, and engagement follow-up, without HR being reactive to every situation.</p>
+    <span class="outcome-label">Outcome</span>
+    <p class="outcome">Created resources, templates, talking points, and structured guidance to help managers have better conversations and apply people practices more consistently across teams.</p>
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- EXPERIENCE -->
+
+  <section id="experience">
+    <div class="section-label">
+      <span class="num">06</span>
+      <h2>Career Experience</h2>
+    </div>
+
+```
+<div class="timeline">
+  <div class="timeline-item">
+    <p class="org">Code for Canada · Remote, Canada</p>
+    <h3>People &amp; Culture Business Partner</h3>
+    <p class="years">2022 to 2026</p>
+    <p>National nonprofit enabling governments and nonprofits to design and deliver digital public services. Served as the primary HR partner across a fully remote, distributed workforce operating in multiple Canadian provinces.</p>
+  </div>
+  <div class="timeline-item">
+    <p class="org">Immigrant Services Calgary · Calgary, AB</p>
+    <h3>HR &amp; Recruitment Coordinator</h3>
+    <p class="years">2021 to 2022</p>
+    <p>Community nonprofit supporting newcomers, immigrants, and refugees. Managed approximately 30 hires per quarter across multiple programs and funding streams in a high-volume environment.</p>
+  </div>
+  <div class="timeline-item">
+    <p class="org">IFX Networks · Latin America</p>
+    <h3>Talent Acquisition &amp; Organizational Development Lead</h3>
+    <p class="years">2018 to 2021</p>
+    <p>Multinational technology company across Latin America. Led talent acquisition, OD, performance management, onboarding, and engagement across 9 countries and 14 departments.</p>
+  </div>
+  <div class="timeline-item">
+    <p class="org">Colsubsidio · Bogotá, Colombia</p>
+    <h3>Planning &amp; Organizational Design Analyst</h3>
+    <p class="years">2017 to 2018</p>
+    <p>Complex organization with approximately 15,000 employees across multiple business units. Supported organizational design, workforce planning, and job architecture at scale.</p>
+  </div>
+  <div class="timeline-item">
+    <p class="org">Independent Practice · Various Clients</p>
+    <h3>HR &amp; Organizational Development Consultant</h3>
+    <p class="years">2015 to 2017</p>
+    <p>Supported founder-led and growing organizations across architecture, marketing, oil and gas, and professional services with HR, OD, recruitment, and leadership development.</p>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- SKILLS & TOOLS -->
+
+  <section id="skills">
+    <div class="section-label">
+      <span class="num">07</span>
+      <h2>Skills &amp; Tools</h2>
+    </div>
+
+```
+<div class="skills-grid">
+  <div class="skill-block">
+    <span class="skill-icon">◎</span>
+    <h4>People Analytics</h4>
+    <ul>
+      <li>Compensation modeling &amp; benchmarking</li>
+      <li>Engagement survey analysis</li>
+      <li>Headcount &amp; workforce reporting</li>
+      <li>Compa-ratio &amp; pay equity analysis</li>
+      <li>Dashboard design &amp; data storytelling</li>
+      <li>Looker Studio / Google Sheets</li>
+    </ul>
+  </div>
+  <div class="skill-block">
+    <span class="skill-icon">◈</span>
+    <h4>Employee Listening</h4>
+    <ul>
+      <li>Survey design &amp; cycle management</li>
+      <li>Multi-wave longitudinal analysis</li>
+      <li>eNPS &amp; favorability reporting</li>
+      <li>Segment &amp; cohort analysis</li>
+      <li>Manager reporting packs</li>
+      <li>Qualitative feedback synthesis</li>
+    </ul>
+  </div>
+  <div class="skill-block">
+    <span class="skill-icon">◇</span>
+    <h4>Organizational Design</h4>
+    <ul>
+      <li>Job architecture (PwC methodology)</li>
+      <li>Role standardization at scale</li>
+      <li>Workforce planning &amp; FTE modeling</li>
+      <li>Org structure analysis</li>
+      <li>Service design &amp; journey mapping</li>
+      <li>Change management support</li>
+    </ul>
+  </div>
+  <div class="skill-block">
+    <span class="skill-icon">◉</span>
+    <h4>Talent &amp; Performance</h4>
+    <ul>
+      <li>Performance cycle design</li>
+      <li>Calibration facilitation</li>
+      <li>Succession planning</li>
+      <li>Career architecture</li>
+      <li>Manager coaching &amp; enablement</li>
+      <li>Onboarding design</li>
+    </ul>
+  </div>
+  <div class="skill-block">
+    <span class="skill-icon">◌</span>
+    <h4>HR Operations</h4>
+    <ul>
+      <li>Multi-province compliance (Canada)</li>
+      <li>Multi-country HR (9 countries)</li>
+      <li>Policy development</li>
+      <li>Employee relations</li>
+      <li>HRIS administration</li>
+      <li>OH&amp;S program management</li>
+    </ul>
+  </div>
+  <div class="skill-block">
+    <span class="skill-icon">◐</span>
+    <h4>Background &amp; Credentials</h4>
+    <ul>
+      <li>CPHR Designated</li>
+      <li>BSc Psychology / I-O Psychology</li>
+      <li>Postgraduate Diploma, HR</li>
+      <li>DISC Practitioner</li>
+      <li>LEGO Serious Play Facilitator</li>
+      <li>AI for HR</li>
+    </ul>
+  </div>
+</div>
+
+<div class="tools-list">
+  <span class="tool-tag">Rippling</span>
+  <span class="tool-tag">15Five</span>
+  <span class="tool-tag">Ceridian Dayforce</span>
+  <span class="tool-tag">Ceridian PowerPay</span>
+  <span class="tool-tag">Breezy HR</span>
+  <span class="tool-tag">Google Sheets</span>
+  <span class="tool-tag">Looker Studio</span>
+  <span class="tool-tag">Power BI</span>
+  <span class="tool-tag">Tableau</span>
+  <span class="tool-tag">Notion</span>
+  <span class="tool-tag">Google Workspace</span>
+  <span class="tool-tag">Microsoft 365</span>
+  <span class="tool-tag">Slack</span>
+  <span class="tool-tag">Miro</span>
+  <span class="tool-tag">Canva</span>
+  <span class="tool-tag">LinkedIn Recruiter</span>
+  <span class="tool-tag">AI Productivity Tools</span>
+</div>
+```
+
+  </section>
+
+</main>
+
+<footer>
+  <span class="f-name">Melissa Acosta · CPHR</span>
+  <span class="f-copy">People &amp; Culture Portfolio · Canada</span>
+</footer>
+
+<script>
+  // Active nav highlighting
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+
+  // Animate cards on scroll
+  const cards = document.querySelectorAll('.project-card, .stat, .skill-block, .timeline-item');
+  const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '0';
+        entry.target.style.transform = 'translateY(20px)';
+        entry.target.style.transition = `opacity 0.5s ease ${i * 0.04}s, transform 0.5s ease ${i * 0.04}s`;
+        setTimeout(() => {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }, 20);
+        cardObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  cards.forEach(c => cardObserver.observe(c));
+</script>
+
+</body>
+</html>
