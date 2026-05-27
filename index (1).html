@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Melissa Acosta · Talent Acquisition & People Culture Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --tiber:       #05323A;
+    --sherpa:      #0B4B52;
+    --oceanic:     #185A60;
+    --vintage:     #1E696C;
+    --myrtle:      #2F7B77;
+    --med-green:   #48908C;
+    --cream:       #EFF6F6;
+    --warm-off:    #E0EEEE;
+    --sand:        #C2DCDB;
+    --pale:        #D3EBEA;
+    --dark:        #05323A;
+    --mid:         #185A60;
+    --light-mid:   #1E696C;
+    --white:       #FFFFFF;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans:  'DM Sans', sans-serif;
+    --transition: 0.3s ease;
+  }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { background: var(--cream); color: var(--dark); font-family: var(--sans); font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+  /* ── NAV ── */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(239,246,246,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--sand); padding: 0 3rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .nav-logo { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; color: var(--dark); letter-spacing: 0.02em; text-decoration: none; }
+  .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+  .nav-links a { font-family: var(--sans); font-size: 0.72rem; font-weight: 400; color: var(--mid); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color var(--transition); }
+  .nav-links a:hover { color: var(--myrtle); }
+  .nav-cta { color: var(--myrtle) !important; border: 1px solid var(--myrtle); padding: 0.4rem 1rem; border-radius: 2px; transition: background var(--transition), color var(--transition) !important; }
+  .nav-cta:hover { background: var(--myrtle) !important; color: var(--white) !important; }
+
+  /* ── HERO ── */
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 64px; }
+  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 6rem 4rem 6rem 5rem; }
+  .hero-eyebrow { font-family: var(--sans); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--myrtle); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .hero-eyebrow::before { content: ''; display: inline-block; width: 32px; height: 1px; background: var(--myrtle); }
+  .hero-name { font-family: var(--serif); font-size: clamp(3rem, 5vw, 5.5rem); font-weight: 300; line-height: 1.05; color: var(--dark); margin-bottom: 0.25rem; letter-spacing: -0.01em; }
+  .hero-name em { font-style: italic; color: var(--myrtle); font-weight: 400; }
+  .hero-title { font-family: var(--serif); font-size: 1.4rem; font-weight: 300; color: var(--mid); margin-bottom: 2rem; font-style: italic; }
+  .hero-desc { font-size: 0.95rem; color: var(--mid); max-width: 420px; line-height: 1.8; margin-bottom: 2.5rem; }
+  .hero-stats { display: flex; gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap; }
+  .stat { display: flex; flex-direction: column; gap: 0.2rem; }
+  .stat-num { font-family: var(--serif); font-size: 2.2rem; font-weight: 500; color: var(--myrtle); line-height: 1; }
+  .stat-label { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--light-mid); font-weight: 400; }
+  .hero-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { font-family: var(--sans); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--white); background: var(--myrtle); padding: 0.85rem 2rem; border-radius: 2px; transition: background var(--transition); }
+  .btn-primary:hover { background: var(--sherpa); }
+  .btn-secondary { font-family: var(--sans); font-size: 0.8rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--mid); border: 1px solid var(--sand); padding: 0.85rem 2rem; border-radius: 2px; transition: border-color var(--transition), color var(--transition); }
+  .btn-secondary:hover { border-color: var(--mid); color: var(--dark); }
+  .hero-right { background: var(--warm-off); display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; }
+  .hero-right::before { content: ''; position: absolute; top: -80px; right: -80px; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, var(--pale) 0%, transparent 70%); opacity: 0.7; }
+  .hero-right::after { content: ''; position: absolute; bottom: 80px; left: 40px; width: 200px; height: 200px; border: 1px solid var(--sand); border-radius: 50%; opacity: 0.5; }
+  .hero-credential-card { position: relative; z-index: 2; margin: 3rem; background: var(--white); border-radius: 6px; padding: 2.5rem; box-shadow: 0 8px 40px rgba(5,50,58,0.08); }
+  .credential-label { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--myrtle); font-weight: 500; margin-bottom: 1.2rem; }
+  .credential-items { display: flex; flex-direction: column; gap: 1rem; }
+  .credential-item { display: flex; align-items: flex-start; gap: 1rem; }
+  .cred-icon { width: 36px; height: 36px; background: var(--pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.9rem; }
+  .cred-text strong { display: block; font-size: 0.88rem; font-weight: 500; color: var(--dark); line-height: 1.3; }
+  .cred-text span { font-size: 0.78rem; color: var(--mid); }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 5rem; max-width: 1200px; margin: 0 auto; }
+  .section-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 3.5rem; }
+  .section-num { font-family: var(--serif); font-size: 5rem; font-weight: 300; color: var(--sand); line-height: 1; flex-shrink: 0; letter-spacing: -0.02em; }
+  .section-titles { display: flex; flex-direction: column; gap: 0.25rem; }
+  .section-eyebrow { font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--myrtle); font-weight: 500; }
+  .section-title { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 400; color: var(--dark); line-height: 1.15; }
+
+  /* ── ABOUT ── */
+  #about { background: var(--warm-off); max-width: 100%; padding: 6rem 0; }
+  #about .inner { max-width: 1200px; margin: 0 auto; padding: 0 5rem; display: grid; grid-template-columns: 1fr 1.4fr; gap: 6rem; align-items: start; }
+  .about-text { font-family: var(--serif); font-size: 1.35rem; font-weight: 300; line-height: 1.75; color: var(--dark); }
+  .about-text em { color: var(--myrtle); font-style: italic; }
+  .about-detail { font-family: var(--sans); font-size: 0.9rem; color: var(--mid); line-height: 1.9; margin-top: 2rem; }
+  .creds-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .cred-badge { font-size: 0.75rem; letter-spacing: 0.06em; color: var(--myrtle); border: 1px solid var(--pale); background: var(--pale); border-radius: 2px; padding: 0.35rem 0.9rem; font-weight: 500; }
+
+  /* ── CARDS ── */
+  .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+  .card { background: var(--white); border: 1px solid var(--sand); border-radius: 6px; padding: 2rem; transition: box-shadow var(--transition), transform var(--transition); position: relative; overflow: hidden; }
+  .card:hover { box-shadow: 0 12px 40px rgba(5,50,58,0.1); transform: translateY(-2px); }
+  .card-tag { display: inline-block; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; color: var(--myrtle); background: var(--pale); padding: 0.3rem 0.7rem; border-radius: 2px; margin-bottom: 1rem; }
+  .card-tag.featured { background: var(--myrtle); color: var(--white); }
+  .card-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; color: var(--dark); margin-bottom: 0.75rem; line-height: 1.3; }
+  .card-outcome-label { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--light-mid); font-weight: 500; margin-bottom: 0.4rem; }
+  .card-outcome { font-size: 0.85rem; color: var(--mid); line-height: 1.7; }
+  .card-metrics { display: flex; flex-wrap: wrap; gap: 0; margin-top: 1rem; }
+  .card-metric { font-family: var(--serif); font-size: 1.5rem; font-weight: 500; color: var(--myrtle); margin-right: 1.5rem; }
+  .card-metric span { display: block; font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--light-mid); font-weight: 400; margin-top: 0.1rem; }
+  .card-accent { position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--myrtle), var(--med-green)); transform: scaleX(0); transform-origin: left; transition: transform var(--transition); }
+  .card:hover .card-accent { transform: scaleX(1); }
+
+  /* ── DIVIDER ── */
+  .section-divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--sand), transparent); margin: 0 5rem; max-width: calc(100% - 10rem); }
+
+  /* ── TIMELINE ── */
+  .timeline { display: flex; flex-direction: column; }
+  .timeline-item { display: grid; grid-template-columns: 200px 1fr; gap: 2.5rem; padding: 2.5rem 0; border-bottom: 1px solid var(--sand); }
+  .timeline-item:first-child { border-top: 1px solid var(--sand); }
+  .timeline-org { font-family: var(--serif); font-size: 1rem; font-weight: 500; color: var(--dark); margin-bottom: 0.2rem; }
+  .timeline-loc { font-size: 0.75rem; color: var(--light-mid); letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  .timeline-years { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--myrtle); font-weight: 500; }
+  .timeline-role { font-family: var(--serif); font-size: 1.25rem; font-weight: 400; color: var(--dark); margin-bottom: 0.75rem; }
+  .timeline-desc { font-size: 0.88rem; color: var(--mid); line-height: 1.8; }
+
+  /* ── SKILLS DARK ── */
+  #skills { background: var(--tiber); max-width: 100%; padding: 6rem 0; }
+  #skills .inner { max-width: 1200px; margin: 0 auto; padding: 0 5rem; }
+  #skills .section-num { color: rgba(72,144,140,0.12); }
+  #skills .section-eyebrow { color: var(--med-green); }
+  #skills .section-title { color: var(--cream); }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+  .skill-card { background: rgba(72,144,140,0.08); border: 1px solid rgba(72,144,140,0.2); border-radius: 6px; padding: 2rem; transition: background var(--transition); }
+  .skill-card:hover { background: rgba(72,144,140,0.15); }
+  .skill-icon { font-size: 1.4rem; margin-bottom: 1rem; opacity: 0.8; }
+  .skill-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 500; color: var(--cream); margin-bottom: 1rem; }
+  .skill-list { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
+  .skill-list li { font-size: 0.82rem; color: rgba(239,246,246,0.6); padding-left: 1rem; position: relative; line-height: 1.5; }
+  .skill-list li::before { content: '—'; position: absolute; left: 0; color: var(--med-green); font-size: 0.7rem; }
+  .tools-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid rgba(72,144,140,0.2); }
+  .tool-chip { font-size: 0.75rem; color: rgba(239,246,246,0.5); border: 1px solid rgba(72,144,140,0.25); border-radius: 2px; padding: 0.35rem 0.9rem; letter-spacing: 0.04em; transition: color var(--transition), border-color var(--transition); }
+  .tool-chip:hover { color: var(--cream); border-color: var(--med-green); }
+
+  /* ── CREDENTIALS ── */
+  .cred-group-label { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--med-green); font-weight: 500; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--sand); }
+  .cred-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+  .cred-card { display: flex; align-items: flex-start; gap: 1rem; background: var(--white); border: 1px solid var(--sand); border-radius: 6px; padding: 1.25rem 1.5rem; transition: box-shadow var(--transition), transform var(--transition); }
+  .cred-card:hover { box-shadow: 0 6px 24px rgba(5,50,58,0.08); transform: translateY(-2px); }
+  .cred-card.highlight { border-color: var(--myrtle); background: linear-gradient(135deg, var(--white) 80%, rgba(47,123,119,0.06)); }
+  .cred-card-icon { font-size: 1.1rem; color: var(--myrtle); flex-shrink: 0; margin-top: 0.1rem; opacity: 0.8; }
+  .cred-card-title { font-family: var(--serif); font-size: 1rem; font-weight: 500; color: var(--dark); line-height: 1.3; }
+  .cred-card-sub { font-size: 0.72rem; color: var(--light-mid); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 400; margin-top: 0.25rem; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--tiber); color: rgba(239,246,246,0.4); text-align: center; padding: 2.5rem; font-size: 0.78rem; letter-spacing: 0.06em; border-top: 1px solid rgba(72,144,140,0.2); }
+  footer a { color: var(--med-green); text-decoration: none; }
+  footer a:hover { color: var(--cream); }
+
+  /* ── FADE IN ── */
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 4rem 2rem; }
+    .hero-right { display: none; }
+    section { padding: 4rem 2rem; }
+    #about .inner { grid-template-columns: 1fr; gap: 2rem; padding: 0 2rem; }
+    .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    #skills .inner { padding: 0 2rem; }
+    .section-divider { margin: 0 2rem; max-width: calc(100% - 4rem); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">Melissa Acosta</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#ta">TA Work</a></li>
+    <li><a href="#analytics">Analytics</a></li>
+    <li><a href="#architecture">Job Architecture</a></li>
+    <li><a href="#listening">Listening</a></li>
+    <li><a href="#operations">HR Operations</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="https://www.linkedin.com/in/melissa-acosta-cphr" target="_blank" class="nav-cta">LinkedIn</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Talent Acquisition &amp; People Culture Portfolio</div>
+    <h1 class="hero-name">Melissa<br><em>Acosta</em></h1>
+    <p class="hero-title">Senior Talent Acquisition &amp; People Partner · CPHR</p>
+    <p class="hero-desc">Full-cycle recruiter and People partner with 11+ years of experience across technical, product, design, and corporate hiring in Canada and Latin America. I build data-informed talent systems where sourcing, structured selection, candidate experience, and people analytics work together as one connected practice, not separate functions.</p>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">11+</span><span class="stat-label">Years Experience</span></div>
+      <div class="stat"><span class="stat-num">6</span><span class="stat-label">Countries Recruited</span></div>
+      <div class="stat"><span class="stat-num">35%</span><span class="stat-label">Passive Candidate Lift</span></div>
+      <div class="stat"><span class="stat-num">10K+</span><span class="stat-label">LinkedIn Network</span></div>
+    </div>
+    <div class="hero-links">
+      <a href="#ta" class="btn-primary">View Portfolio</a>
+      <a href="https://www.linkedin.com/in/melissa-acosta-cphr" target="_blank" class="btn-secondary">LinkedIn</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-credential-card">
+      <div class="credential-label">Background &amp; Expertise</div>
+      <div class="credential-items">
+        <div class="credential-item">
+          <div class="cred-icon">🎯</div>
+          <div class="cred-text">
+            <strong>Full-Cycle Technical Recruiter</strong>
+            <span>SaaS/IaaS · Engineering · Product · Design · Research</span>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="cred-icon">📊</div>
+          <div class="cred-text">
+            <strong>People &amp; Recruiting Analytics</strong>
+            <span>Dashboards · FTE forecasting · Board-ready reporting</span>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="cred-icon">🌎</div>
+          <div class="cred-text">
+            <strong>Canada &amp; Latin America</strong>
+            <span>6 countries recruited · Multi-province HR expertise</span>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="cred-icon">🤝</div>
+          <div class="cred-text">
+            <strong>CPHR · I/O Psychology Background</strong>
+            <span>Structured selection · Psychometric assessment · DEIB</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="inner">
+    <div class="fade-in">
+      <div class="section-header" style="margin-bottom:1.5rem;">
+        <div class="section-num">00</div>
+        <div class="section-titles">
+          <span class="section-eyebrow">About This Work</span>
+          <h2 class="section-title">Talent Acquisition<br>&amp; People Systems</h2>
+        </div>
+      </div>
+    </div>
+    <div class="fade-in">
+      <p class="about-text">I build <em>talent acquisition and people systems</em> where sourcing, structured selection, candidate experience, analytics, and organizational design work together as one connected system.</p>
+      <p class="about-detail">This portfolio covers 15+ bodies of work across talent acquisition, recruiting analytics, job architecture, employee listening, compensation, talent systems, and HR operations — spanning SaaS/IaaS, nonprofit technology, digital service delivery, consulting, and multinational environments in Canada and Latin America.<br><br>Most of this work was built with lean resources, no dedicated TA ops team, and a belief that great recruiting and great HR don't require an expensive stack. They require clear thinking, structured processes, and sound methodology.</p>
+      <div class="creds-row" style="margin-top:2rem;">
+        <span class="cred-badge">CPHR Designated</span>
+        <span class="cred-badge">I/O Psychology</span>
+        <span class="cred-badge">Certified Strategic TA Specialist</span>
+        <span class="cred-badge">Tech Recruitment Certified</span>
+        <span class="cred-badge">DISC Practitioner</span>
+        <span class="cred-badge">AI for HR</span>
+        <span class="cred-badge">DEIB Specialist</span>
+        <span class="cred-badge">LEGO Serious Play Facilitator</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- TA PROJECTS -->
+<section id="ta" style="max-width:1200px;margin:0 auto;">
+  <div class="section-header fade-in">
+    <div class="section-num">01</div>
+    <div class="section-titles">
+      <span class="section-eyebrow">Core Talent Acquisition Work</span>
+      <h2 class="section-title">TA Projects</h2>
+    </div>
+  </div>
+  <div class="cards-grid">
+
+    <div class="card fade-in">
+      <span class="card-tag featured">★ Featured · Technical Recruiting</span>
+      <h3 class="card-title">Sprint Recruiting Model &amp; Passive Talent Strategy</h3>
+      <div class="card-outcome-label">IFX Networks · 6 Countries</div>
+      <p class="card-outcome">Implemented a sprint recruiting model across Colombia, Panama, Honduras, Guatemala, Chile, and Argentina by standardizing requisition allocation, SLA tracking, sourcing strategies, and recruiter accountability for technical and business-critical roles. Trained 6 recruiters on Boolean search, LinkedIn headhunting, GitHub repositories, and pipeline building.</p>
+      <div class="card-metrics">
+        <div class="card-metric">35%<span>Passive candidate lift</span></div>
+        <div class="card-metric">6<span>Countries</span></div>
+      </div>
+      <div class="card-accent"></div>
+    </div>
+
+    <div class="card fade-in">
+      <span class="card-tag featured">★ Featured · Structured Hiring</span>
+      <h3 class="card-title">Inclusive Hiring &amp; Candidate Experience Redesign</h3>
+      <div class="card-outcome-label">Code for Canada</div>
+      <p class="card-outcome">Redesigned full-cycle recruitment from job posting through offer: plain-language postings, structured behavioural interviews, evaluation scorecards, and bias-mitigation practices. Contributed to the organization's 2025 Untapped Workplace Inclusion Award nomination. Achieved approximately 80% within-SLA fill rate across 15–20 roles annually.</p>
+      <div class="card-metrics">
+        <div class="card-metric">80%<span>Within-SLA fill rate</span></div>
+        <div class="card-metric">15–20<span>Roles/year</span></div>
+      </div>
+      <div class="card-accent"></div>
+    </div>
+
+    <div class="card fade-in">
+      <span class="card-tag featured">★ Featured · Workforce Planning</span>
+      <h3 class="card-title">Technical Talent Supply Forecasting Model</h3>
+      <div class="card-outcome-label">IFX Networks</div>
+      <p class="card-outcome">Designed a forecasting model using historical workforce data, turnover trends, resignation patterns, and skills gap analysis to generate monthly FTE projections and a buy/build/borrow/automate decision framework aligned to growth targets. After identifying recurring contractor dependency in critical roles and designed a build-over-buy strategy that reduced costs, accelerated internal promotions, and shortened time-to-fill, validated across all three dimensions.</p>
+      <div class="card-accent"></div>
+    </div>
+
+    <div class="card fade-in">
+      <span class="card-tag">Technical Recruiting</span>
+      <h3 class="card-title">Regional Technical Recruitment · SaaS/IaaS</h3>
+      <div class="card-outcome-label">IFX Networks · LATAM</div>
+      <p class="card-outcome">Led full-cycle recruitment for cloud, security, data centre, infrastructure, network, development, BI, PMO, and leadership roles across LATAM. Grew LinkedIn Recruiter network to 10,000+ connections through passive candidate outreach and technical community engagement.</p>
+      <div class="card-metrics">
+        <div class="card-metric">10K+<span>LinkedIn network</span></div>
+        <div class="card-metric">100<span>Hires/quarter</span></div>
+      </div>
+      <div class="card-accent"></div>
+    </div>
+
+    <div class="card fade-in">
+      <span class="card-tag">Digital &amp; Product Hiring</span>
+      <h3 class="card-title">Digital Product &amp; Service Design Recruitment</h3>
+      <div class="card-outcome-label">Code for Canada</div>
+      <p class="card-outcome">Led full-cycle recruitment for Product Managers, Full-stack Developers, QA Specialists, UX Designers, Inclusive User Researchers, and Service Designers for government-contracted digital service projects. Managed complex timelines including federal security clearance requirements extending up to six months, sustaining candidate engagement throughout.</p>
+      <div class="card-accent"></div>
+    </div>
+
+    <div class="card fade-in">
+      <span class="card-tag">High-Volume</span>
+      <h3 class="card-title">High-Volume Nonprofit Recruitment</h3>
+      <div class="card-outcome-label">Immigrant Services Calgary</div>
+      <p class="card-outcome">Managed 30–45 hires per quarter across settlement, employment, language, youth, and program roles. Reduced time-to-fill by 15%. Recruited 21 of 25 Canada Summer Jobs placements from student-eligible talent pools. Resolved 37 employee data discrepancies in Ceridian Dayforce through a full HR data audit.</p>
+      <div class="card-metrics">
+        <div class="card-metric">15%<span>Time-to-fill reduction</span></div>
+        <div class="card-metric">30–45<span>Hires/quarter</span></div>
+      </div>
+      <div class="card-accent"></div>
+    </div>
+
+    <div class="card fade-in">
+      <span class="card-tag">Sourcing</span>
+      <h3 class="card-title">Advanced Sourcing &amp; Recruiter Capability Building</h3>
+      <div class="card-outcome-label">IFX Networks</div>
+      <p class="card-outcome">Trained 6 recruiters on Boolean search, LinkedIn Recruiter, GitHub repository sourcing, talent mapping, and passive candidate outreach, measurably improving sourcing quality for specialized technical roles. Employer branding through internship programs, niche industry events, and university job fairs further increased passive candidate applications by 23%.</p>
+      <div class="card-metrics">
+        <div class="card-metric">23%<span>Passive lift via EB</span></div>
+        <div class="card-metric">6<span>Recruiters trained</span></div>
+      </div>
+      <div class="card-accent"></div>
+    </div>
+
+    <div class="card fade-in">
+      <span class="card-tag">Structured Selection</span>
+      <h3 class="card-title">Competency-Based Hiring Tools &amp; Interview Standardization</h3>
+      <div class="card-outcome-label">Code for Canada · ISC · IFX Networks</div>
+      <p class="card-outcome">Built competency-based interview guides, behaviourally anchored rating scales, evaluation scorecards, and psychometric assessment frameworks across organizations. Combined I/O Psychology background with practical hiring contexts to reduce informal decision-making and create consistent, bias-mitigated evaluation practices.</p>
+      <div class="card-accent"></div>
+    </div>
+
+    <div class="card fade-in">
+      <span class="card-tag">DEIB</span>
+      <h3 class="card-title">DEIB-Informed Hiring Practices &amp; Representation Tracking</h3>
+      <div class="card-outcome-label">Code for Canada</div>
+      <p class="card-outcome">Embedded inclusion across every recruitment stage: plain-language postings, skills-first requirements, gender-biased language review, inclusive evaluation rubrics, and structured hiring manager training. Diversity metrics were built across sourcing, funnel conversion, source of hire, probationary success, and retention, shifting TA reporting from activity tracking to equity-accountable improvement.</p>
+      <div class="card-accent"></div>
+    </div>
+
+    <div class="card fade-in">
+      <span class="card-tag">Onboarding</span>
+      <h3 class="card-title">Onboarding Redesign: Service Blueprint &amp; Journey Mapping</h3>
+      <div class="card-outcome-label">Code for Canada</div>
+      <p class="card-outcome">Led a 6-month redesign using service design methods, mapping frontstage employee touchpoints, backstage HR activities, systems, and handoffs to surface improvement opportunities. The result was a staged Notion hub guiding employees through their first day, first week, first month, and up to 90 days, improving new hire clarity and the candidate-to-employee transition across approximately 50 employees and contractors.</p>
+      <div class="card-accent"></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ANALYTICS -->
+<section id="analytics" style="max-width:1200px;margin:0 auto;">
+  <div class="section-header fade-in">
+    <div class="section-num">02</div>
+    <div class="section-titles">
+      <span class="section-eyebrow">Recruiting &amp; Workforce Analytics</span>
+      <h2 class="section-title">People Analytics</h2>
+    </div>
+  </div>
+  <div class="cards-grid">
+
+    <div class="card fade-in">
+      <span class="card-tag featured">★ Featured · Recruiting Analytics</span>
+      <h3 class="card-title">Hiring Dashboard: Time-to-Fill, Funnel &amp; SLA Tracking</h3>
+      <div class="card-outcome-label">Outcome</div>
+      <p class="card-outcome">Built hiring dashboards tracking time-to-fill, cost-per-hire, source effectiveness, candidate quality, funnel conversion, SLA adherence, probationary success, and new hire turnover, enabling faster, evidence-based hiring decisions with senior leaders.</p>
+      <div class="card-accent"></div>
+    </div>
+
+    <div class="card fade-in">
+      <span class="card-tag featured">★ Featured · People Analytics</span>
+      <h3 class="card-title">Multi-Year Compensation &amp; Workforce Analytics Model</h3>
+      <div class="card-outcome-label">Outcome</div>
+      <p class="card-outcome">Built a multi-year model capturing salary movement, tenure, job level, department, province, and employee group, creating the first structured foundation for equity conversations, offer calibration, and board-level compensation reporting.</p>
+      <div class="card-accent"></div>
+    </div>
+
+    <div class="card fade-in">
+      <span class="card-tag">Diversity Analytics</span>
+      <h3 class="card-title">Diversity Recruiting Metrics &amp; Equity Reporting</h3>
+      <div class="card-outcome-label">Outcome</div>
+      <p class="card-outcome">Built diversity and recruitment metrics across sourcing, outreach, funnel conversion, source of hire, probationary success, performance, and retention, shifting TA reporting from activity tracking to equity-accountable, evidence-based hiring improvement. Informed CEO and board-level workforce decisions on representation and pay equity.</p>
+      <div class="card-accent"></div>
+    </div>
+
+    <div class="card fade-in">
+      <span class="card-tag">Engagement Analytics</span>
+      <h3 class="card-title">Multi-Wave Engagement Survey Strategy &amp; Dashboard</h3>
+      <div class="card-outcome-label">Outcome</div>
+      <p class="card-outcome">Developed a construct-level aggregation approach across 8–10 survey waves over four years, mapping shifting questions to 6–8 stable meta-themes to enable longitudinal trend analysis for the first time. Led 9 employee listening cycles through 15Five with eNPS, favorability trends, and burnout-risk flags.</p>
+      <div class="card-accent"></div>
+    </div>
+
+    <div class="card fade-in">
+      <span class="card-tag">Workforce Reporting</span>
+      <h3 class="card-title">Headcount, Payroll &amp; Total Cost of Employment Reporting</h3>
+      <div class="card-outcome-label">Outcome</div>
+      <p class="card-outcome">Created headcount tracking across department, province, employment group, and organizational segment. Designed a statutory payroll cost summary comparing gross pay, employer costs, funded amounts, and cost variances, improving financial visibility for People, Finance, and leadership. for People, Finance, and leadership.</p>
+      <div class="card-accent"></div>
+    </div>
+
+    <div class="card fade-in">
+      <span class="card-tag">Burnout Risk</span>
+      <h3 class="card-title">PTO &amp; Burnout Risk Dashboard</h3>
+      <div class="card-outcome-label">Outcome</div>
+      <p class="card-outcome">Created an employee-level risk view with entitlement, vacation used, percentage used, burnout risk flag, zero-vacation flag, and risk priority, moving the dashboard from passive reporting to practical manager action and retention risk management.</p>
+      <div class="card-accent"></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- JOB ARCHITECTURE -->
+<section id="architecture" style="max-width:1200px;margin:0 auto;">
+  <div class="section-header fade-in">
+    <div class="section-num">03</div>
+    <div class="section-titles">
+      <span class="section-eyebrow">Job Architecture &amp; Role Design</span>
+      <h2 class="section-title">Role &amp; Career Frameworks</h2>
+    </div>
+  </div>
+  <div class="cards-grid">
+
+    <div class="card fade-in">
+      <span class="card-tag featured">★ Featured · Job Architecture</span>
+      <h3 class="card-title">IFX Role Modernization: 157 Roles × 9 Countries</h3>
+      <div class="card-outcome-label">Outcome</div>
+      <p class="card-outcome">Modernized 157 roles using PwC job architecture methodology, completing 100% of regional roles within six months. Integrated skills taxonomy, competency frameworks, salary bands, and technical career pathways across 14 departments, creating stronger foundations for hiring calibration, internal equity, and workforce planning.</p>
+      <div class="card-metrics">
+        <div class="card-metric">157<span>Roles modernized</span></div>
+        <div class="card-metric">6 mo<span>Completion</span></div>
+      </div>
+      <div class="card-accent"></div>
+    </div>
+
+    <div class="card fade-in">
+      <span class="card-tag featured">★ Featured · Career Pathways</span>
+      <h3 class="card-title">Technical Career Pathways &amp; Internal Build Strategy</h3>
+      <div class="card-outcome-label">Outcome</div>
+      <p class="card-outcome">Developed career pathways for 20+ technical and leadership roles across Cloud, Security, Data Centre, Development, BI, PMO, and Engineering. Created an internal technical bootcamp connecting workforce planning, learning strategy, internal mobility, and salary bands, reducing contractor dependency while accelerating internal promotions.</p>
+      <div class="card-accent"></div>
+    </div>
+
+    <div class="card fade-in">
+      <span class="card-tag">Competency Frameworks</span>
+      <h3 class="card-title">Competency-Based Career Frameworks</h3>
+      <div class="card-outcome-label">Outcome</div>
+      <p class="card-outcome">Co-created competency models, salary bands, job levels, and career pathways from foundational to expert levels at Code for Canada, connecting hiring, performance, compensation, and development, including pathways for UX Designers moving into Product Manager roles.</p>
+      <div class="card-accent"></div>
+    </div>
+
+    <div class="card fade-in">
+      <span class="card-tag">Organizational Design</span>
+      <h3 class="card-title">Colsubsidio Role Standardization: 459 Roles × 35 Departments</h3>
+      <div class="card-outcome-label">Outcome</div>
+      <p class="card-outcome">Standardized 459 roles across 35 departments in a 15,000-employee organization using PwC job evaluation methodology, contributing to clearer structures, salary band development, internal equity foundations, and workforce planning at scale.</p>
+      <div class="card-metrics">
+        <div class="card-metric">459<span>Roles standardized</span></div>
+        <div class="card-metric">35<span>Departments</span></div>
+      </div>
+      <div class="card-accent"></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- LISTENING -->
+<section id="listening" style="max-width:1200px;margin:0 auto;">
+  <div class="section-header fade-in">
+    <div class="section-num">04</div>
+    <div class="section-titles">
+      <span class="section-eyebrow">Employee Listening &amp; Engagement</span>
+      <h2 class="section-title">Listening Strategy</h2>
+    </div>
+  </div>
+  <div class="cards-grid">
+
+    <div class="card fade-in">
+      <span class="card-tag featured">★ Featured · Employee Listening</span>
+      <h3 class="card-title">Employee Listening Strategy &amp; Organizational Health Reporting</h3>
+      <div class="card-outcome-label">Outcome</div>
+      <p class="card-outcome">Built a multi-channel employee listening strategy using biannual surveys, eNPS, pulse checks, and qualitative feedback to identify talent risks, manager effectiveness gaps, burnout indicators, and retention themes. Translated findings into executive-ready insights and manager action materials.</p>
+      <div class="card-accent"></div>
+    </div>
+
+    <div class="card fade-in">
+      <span class="card-tag">Manager Enablement</span>
+      <h3 class="card-title">Manager Engagement Reporting Pack</h3>
+      <div class="card-outcome-label">Outcome</div>
+      <p class="card-outcome">Developed manager-facing reporting with KPI tables, segment comparisons, gap analysis, and prioritized recommendations to support manager accountability and targeted action planning across HQ and project-based teams.</p>
+      <div class="card-accent"></div>
+    </div>
+
+    <div class="card fade-in">
+      <span class="card-tag">IFX Networks</span>
+      <h3 class="card-title">Regional Engagement &amp; NPS Measurement</h3>
+      <div class="card-outcome-label">Outcome</div>
+      <p class="card-outcome">Led regional measurement using NPS-style surveys, qualitative feedback, and leadership reporting, surfacing employee concerns and informing action plans across 9 countries in a fast-paced technology environment.</p>
+      <div class="card-accent"></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- OPERATIONS -->
+<section id="operations" style="max-width:1200px;margin:0 auto;">
+  <div class="section-header fade-in">
+    <div class="section-num">05</div>
+    <div class="section-titles">
+      <span class="section-eyebrow">HR Operations &amp; Compliance</span>
+      <h2 class="section-title">HR Operations</h2>
+    </div>
+  </div>
+  <div class="cards-grid">
+
+    <div class="card fade-in">
+      <span class="card-tag">Performance</span>
+      <h3 class="card-title">Regional Performance Management Platform Implementation</h3>
+      <div class="card-outcome-label">Outcome</div>
+      <p class="card-outcome">Led implementation of a regional performance management platform for approximately 500 employees across 6 countries, replacing manual Excel-based tracking and enabling stronger KPI alignment, calibration, succession visibility, and performance follow-up across LATAM.</p>
+      <div class="card-accent"></div>
+    </div>
+
+    <div class="card fade-in">
+      <span class="card-tag">Multi-Province</span>
+      <h3 class="card-title">Policy &amp; Leave Compliance Updates</h3>
+      <div class="card-outcome-label">Outcome</div>
+      <p class="card-outcome">Reviewed and updated employee-facing policy and leave materials across Alberta, Ontario, British Columbia, Quebec, and Nova Scotia, maintaining compliance while improving clarity and usability for a distributed workforce.</p>
+      <div class="card-accent"></div>
+    </div>
+
+    <div class="card fade-in">
+      <span class="card-tag">Health &amp; Safety</span>
+      <h3 class="card-title">Remote OH&amp;S Resource Hub</h3>
+      <div class="card-outcome-label">Outcome</div>
+      <p class="card-outcome">Built a remote-first OH&S hub with safety assessments, checklists, emergency planning resources, and compliance guidance, making the process more employee-friendly and organizationally manageable for a fully distributed workforce.</p>
+      <div class="card-accent"></div>
+    </div>
+
+    <div class="card fade-in">
+      <span class="card-tag">Manager Enablement</span>
+      <h3 class="card-title">Manager Enablement Resources</h3>
+      <div class="card-outcome-label">Outcome</div>
+      <p class="card-outcome">Created resources, templates, talking points, and structured guidance to help managers have better conversations and apply people practices more consistently across teams, covering onboarding, performance, leaves, employee relations, and policy interpretation. onboarding, performance, leaves, employee relations, and policy interpretation.</p>
+      <div class="card-accent"></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience" style="max-width:1200px;margin:0 auto;">
+  <div class="section-header fade-in">
+    <div class="section-num">06</div>
+    <div class="section-titles">
+      <span class="section-eyebrow">Career Experience</span>
+      <h2 class="section-title">Work History</h2>
+    </div>
+  </div>
+  <div class="timeline">
+
+    <div class="timeline-item fade-in">
+      <div class="timeline-left">
+        <div class="timeline-org">Code for Canada</div>
+        <div class="timeline-loc">Remote, Canada</div>
+        <div class="timeline-years">2022 – 2026</div>
+      </div>
+      <div>
+        <div class="timeline-role">People &amp; Culture Business Partner</div>
+        <div class="timeline-desc">National nonprofit enabling governments to design and deliver digital public services. Led full-cycle recruitment for Product Managers, Full-stack Developers, QA Specialists, UX Designers, Researchers, and Service Designers. Designed structured behavioural interviews, technical assessments, standardized scorecards, and manager coaching practices. Built recruiting and people analytics dashboards across hiring, engagement, compensation, and workforce lifecycle data. Contributed to the 2025 Untapped Workplace Inclusion Award nomination.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item fade-in">
+      <div class="timeline-left">
+        <div class="timeline-org">Immigrant Services Calgary</div>
+        <div class="timeline-loc">Calgary, AB</div>
+        <div class="timeline-years">2021 – 2022</div>
+      </div>
+      <div>
+        <div class="timeline-role">HR &amp; Recruitment Coordinator</div>
+        <div class="timeline-desc">Community nonprofit supporting newcomers and refugees. Managed 30–45 hires per quarter across multiple programs and funding streams. Reduced time-to-fill by 15%. Recruited 21 of 25 Canada Summer Jobs placements from student-eligible talent pools. Resolved 37 employee data discrepancies through a full HRIS audit. Built centralized recruitment backend with standardized interview guides, scorecards, and onboarding templates.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item fade-in">
+      <div class="timeline-left">
+        <div class="timeline-org">IFX Networks</div>
+        <div class="timeline-loc">Latin America · 6 Countries</div>
+        <div class="timeline-years">2018 – 2021</div>
+      </div>
+      <div>
+        <div class="timeline-role">Talent Acquisition &amp; Organizational Development Lead</div>
+        <div class="timeline-desc">Multinational SaaS/IaaS technology company across Latin America. Led regional full-cycle technical recruitment across Colombia, Panama, Honduras, Guatemala, Chile, and Argentina. Managed a team of 6 recruiters. Grew LinkedIn Recruiter network to 10,000+ connections. Implemented sprint recruiting model increasing passive candidate applications by 35%. Built hiring dashboards tracking time-to-fill, cost-per-hire, source effectiveness, and funnel conversion. Designed technical talent supply forecasting model and build-over-buy talent strategy. Modernized 157 roles using PwC methodology within six months.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item fade-in">
+      <div class="timeline-left">
+        <div class="timeline-org">Colsubsidio</div>
+        <div class="timeline-loc">Bogotá, Colombia</div>
+        <div class="timeline-years">2017 – 2018</div>
+      </div>
+      <div>
+        <div class="timeline-role">Planning &amp; Organizational Design Analyst</div>
+        <div class="timeline-desc">15,000-employee social services organization. Standardized 459 roles across 35 departments using PwC job evaluation methodology. Built headcount forecasting and workforce planning models informing budgeting, recruitment priorities, and long-term talent sustainability for senior leadership.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item fade-in">
+      <div class="timeline-left">
+        <div class="timeline-org">Independent Practice</div>
+        <div class="timeline-loc">Various Clients</div>
+        <div class="timeline-years">2015 – 2017</div>
+      </div>
+      <div>
+        <div class="timeline-role">HR &amp; Organizational Development Consultant</div>
+        <div class="timeline-desc">Delivered executive and mid-level recruitment, psychometric assessment, competency-based interviews, job architecture, and performance management across architecture, marketing, oil and gas, professional services, and education sectors. Built foundational TA infrastructure for a digital startup including recruitment workflows, competency models, and hiring KPIs.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CREDENTIALS -->
+<section id="credentials" style="max-width:1200px;margin:0 auto;">
+  <div class="section-header fade-in">
+    <div class="section-num">07</div>
+    <div class="section-titles">
+      <span class="section-eyebrow">Continuing Education</span>
+      <h2 class="section-title">Credentials</h2>
+    </div>
+  </div>
+
+  <div class="cred-group fade-in">
+    <div class="cred-group-label">AIHR · Academy for Innovative HR &nbsp;·&nbsp; 2022 – 2026</div>
+    <div class="cred-cards">
+      <div class="cred-card highlight"><div class="cred-card-icon">◎</div><div><div class="cred-card-title">Certified Strategic Talent Acquisition Specialist</div></div></div>
+      <div class="cred-card highlight"><div class="cred-card-icon">◈</div><div><div class="cred-card-title">Certified People Analytics Specialist</div></div></div>
+      <div class="cred-card highlight"><div class="cred-card-icon">◉</div><div><div class="cred-card-title">Certified People Data &amp; Business Insights Specialist</div></div></div>
+      <div class="cred-card highlight"><div class="cred-card-icon">◇</div><div><div class="cred-card-title">Certified AI for HR Specialist</div></div></div>
+      <div class="cred-card highlight"><div class="cred-card-icon">◌</div><div><div class="cred-card-title">Certified DEIB Specialist</div></div></div>
+      <div class="cred-card highlight"><div class="cred-card-icon">◐</div><div><div class="cred-card-title">Certified Compensation &amp; Benefits Professional</div></div></div>
+      <div class="cred-card"><div class="cred-card-icon">◎</div><div><div class="cred-card-title">Certified Talent Management &amp; Succession Planning Specialist</div></div></div>
+      <div class="cred-card"><div class="cred-card-icon">◈</div><div><div class="cred-card-title">Certified HR OD Practitioner</div></div></div>
+      <div class="cred-card"><div class="cred-card-icon">◉</div><div><div class="cred-card-title">Certified Digital HR Specialist</div></div></div>
+      <div class="cred-card"><div class="cred-card-icon">◇</div><div><div class="cred-card-title">Certified HR Consulting Skills</div></div></div>
+    </div>
+  </div>
+
+  <div class="cred-group fade-in" style="margin-top:2.5rem;">
+    <div class="cred-group-label">Other Credentials</div>
+    <div class="cred-cards">
+      <div class="cred-card highlight"><div class="cred-card-icon">◌</div><div><div class="cred-card-title">Tech Recruitment Certified Professional</div><div class="cred-card-sub">DevSkiller · 2020</div></div></div>
+      <div class="cred-card highlight"><div class="cred-card-icon">◎</div><div><div class="cred-card-title">Designing Good Services</div><div class="cred-card-sub">The School of Good Services (tSGS)</div></div></div>
+      <div class="cred-card"><div class="cred-card-icon">◈</div><div><div class="cred-card-title">DISC Practitioner</div></div></div>
+      <div class="cred-card"><div class="cred-card-icon">◉</div><div><div class="cred-card-title">LEGO® Serious Play Facilitator</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="inner">
+    <div class="section-header fade-in">
+      <div class="section-num">08</div>
+      <div class="section-titles">
+        <span class="section-eyebrow">Skills &amp; Tools</span>
+        <h2 class="section-title" style="color:var(--cream);">Expertise</h2>
+      </div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card fade-in">
+        <div class="skill-icon">◎</div>
+        <div class="skill-title">Talent Acquisition</div>
+        <ul class="skill-list">
+          <li>Full-cycle technical &amp; corporate recruiting</li>
+          <li>High-volume &amp; specialized search</li>
+          <li>Boolean search &amp; LinkedIn Recruiter</li>
+          <li>GitHub repository sourcing</li>
+          <li>Hiring manager intake &amp; calibration</li>
+          <li>Campus &amp; early-career hiring</li>
+        </ul>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">◈</div>
+        <div class="skill-title">Structured Selection</div>
+        <ul class="skill-list">
+          <li>Competency-based interviews</li>
+          <li>Behaviourally anchored rating scales</li>
+          <li>Psychometric &amp; cognitive assessment</li>
+          <li>Evaluation scorecards</li>
+          <li>DEIB-informed selection</li>
+          <li>I/O Psychology foundations</li>
+        </ul>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">◇</div>
+        <div class="skill-title">People Analytics</div>
+        <ul class="skill-list">
+          <li>Recruiting dashboards &amp; funnel analytics</li>
+          <li>Compensation modeling &amp; benchmarking</li>
+          <li>FTE forecasting models</li>
+          <li>Diversity representation tracking</li>
+          <li>Engagement &amp; retention analytics</li>
+          <li>Board-ready workforce reporting</li>
+        </ul>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">◉</div>
+        <div class="skill-title">Job Architecture &amp; Workforce Planning</div>
+        <ul class="skill-list">
+          <li>Job architecture (PwC methodology)</li>
+          <li>Role standardization at scale</li>
+          <li>Career pathway design</li>
+          <li>Competency frameworks</li>
+          <li>Succession planning</li>
+          <li>Internal mobility strategy</li>
+        </ul>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">◌</div>
+        <div class="skill-title">HR Operations &amp; Partnership</div>
+        <ul class="skill-list">
+          <li>Multi-province compliance (Canada)</li>
+          <li>Multi-country HR (9 countries)</li>
+          <li>Employee relations &amp; advisory</li>
+          <li>Policy development</li>
+          <li>HRIS administration</li>
+          <li>OH&amp;S program management</li>
+        </ul>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">◐</div>
+        <div class="skill-title">Background &amp; Credentials</div>
+        <ul class="skill-list">
+          <li>CPHR Designated</li>
+          <li>BSc Psychology / I-O Psychology</li>
+          <li>Postgraduate Diploma, HR</li>
+          <li>Certified Strategic TA Specialist</li>
+          <li>Tech Recruitment Certified (DevSkiller)</li>
+          <li>Bilingual English / Spanish</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tools-row">
+      <span class="tool-chip">LinkedIn Recruiter</span>
+      <span class="tool-chip">Breezy ATS</span>
+      <span class="tool-chip">Boolean Search</span>
+      <span class="tool-chip">GitHub Sourcing</span>
+      <span class="tool-chip">Rippling</span>
+      <span class="tool-chip">Ceridian Dayforce</span>
+      <span class="tool-chip">Ceridian PowerPay</span>
+      <span class="tool-chip">CERTN</span>
+      <span class="tool-chip">15Five</span>
+      <span class="tool-chip">Looker Studio</span>
+      <span class="tool-chip">Google Sheets</span>
+      <span class="tool-chip">Power BI</span>
+      <span class="tool-chip">Tableau</span>
+      <span class="tool-chip">Notion</span>
+      <span class="tool-chip">Google Workspace</span>
+      <span class="tool-chip">Microsoft 365</span>
+      <span class="tool-chip">Slack</span>
+      <span class="tool-chip">Miro</span>
+      <span class="tool-chip">Canva</span>
+      <span class="tool-chip">AI Productivity Tools</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  Melissa Acosta · CPHR · Talent Acquisition &amp; People Culture Portfolio · Canada &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/melissa-acosta-cphr" target="_blank">LinkedIn</a>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  document.querySelectorAll('.cards-grid').forEach(grid => {
+    grid.querySelectorAll('.card').forEach((card, i) => {
+      card.style.transitionDelay = `${i * 60}ms`;
+    });
+  });
+</script>
+</body>
+</html>
